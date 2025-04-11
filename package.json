@@ -1,32 +1,20 @@
 {
   "name": "sheetor",
-  "version": "0.1.0",
   "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build",
-    "start": "next start",
-    "lint": "biome format --write . && biome lint .",
-    "lint:fix": "biome lint . --write && biome format --write .",
-    "format": "biome format",
-    "prepare": "husky"
-  },
-  "dependencies": {
-    "next": "15.2.5",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "dev": "yarn workspace @sheetor/app dev",
+    "build": "yarn workspace @sheetor/app build",
+    "start": "yarn workspace @sheetor/app start",
+    "lint": "yarn workspaces run lint",
+    "format": "yarn workspaces run format"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
     "@commitlint/cli": "^19.8.0",
     "@commitlint/config-conventional": "^19.8.0",
-    "@tailwindcss/postcss": "^4",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "husky": "^9.1.7",
-    "pinst": "^3.0.0",
-    "tailwindcss": "^4",
-    "typescript": "^5"
+    "husky": "^9.1.7"
   }
 }

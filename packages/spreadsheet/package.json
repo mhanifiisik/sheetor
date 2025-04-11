@@ -1,0 +1,30 @@
+{
+  "name": "@sheetor/spreadsheet",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "./dist/index.umd.js",
+  "module": "./dist/index.es.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "lint": "biome format --write . && biome lint .",
+    "format": "biome format"
+  },
+  "dependencies": {
+    "@tanstack/react-table": "^8.21.2",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@vitejs/plugin-react": "^4.2.0",
+    "typescript": "^5",
+    "vite": "^5.0.0"
+  }
+}
