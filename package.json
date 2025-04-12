@@ -5,9 +5,11 @@
     "packages/*"
   ],
   "scripts": {
-    "dev": "yarn workspace @sheetor/app dev",
-    "build": "yarn workspace @sheetor/app build",
-    "start": "yarn workspace @sheetor/app start",
+    "dev": "yarn workspace @sheetor/webapp dev",
+    "build": "yarn workspaces run build",
+    "build:webapp": "yarn workspace @sheetor/webapp build",
+    "build:spreadsheet": "yarn workspace @sheetor/spreadsheet build",
+    "start": "yarn workspace @sheetor/webapp start",
     "lint": "yarn workspaces run lint",
     "format": "yarn workspaces run format"
   },
