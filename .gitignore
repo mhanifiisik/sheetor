@@ -77,3 +77,4 @@ packages/spreadsheet/node_modules/
 packages/spreadsheet/dist/
 packages/app/node_modules/
 packages/app/.next/
+*storybook.log

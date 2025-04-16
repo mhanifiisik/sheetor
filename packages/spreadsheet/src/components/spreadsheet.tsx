@@ -1,6 +1,6 @@
 import React, { useState, useRef, type ChangeEvent } from "react"
 import { useSpreadsheet } from "../hooks/use-spreadsheet"
-import type { SpreadsheetData, ImportOptions, ExportOptions, CellStyle } from "../types"
+import type { SpreadsheetData, CellStyle } from "../types"
 
 export interface SpreadsheetProps {
 	initialData?: SpreadsheetData
@@ -19,8 +19,6 @@ export function Spreadsheet({ initialData, className, onDataChange }: Spreadshee
 		setCellValue,
 		setCellStyle,
 		addSheet,
-		removeSheet,
-		renameSheet,
 		importData,
 		exportData,
 		clearSheet,
@@ -73,26 +71,6 @@ export function Spreadsheet({ initialData, className, onDataChange }: Spreadshee
 			} catch (e) {
 				console.error(e)
 				// In a real application, you'd want to show an error message to the user
-			}
-		}
-	}
-
-	const handleRemoveSheet = () => {
-		if (activeSheet) {
-			try {
-				removeSheet(activeSheet)
-			} catch (e) {
-				console.error(e)
-			}
-		}
-	}
-
-	const handleRenameSheet = (newName: string) => {
-		if (activeSheet && newName.trim() && newName !== activeSheet) {
-			try {
-				renameSheet(activeSheet, newName.trim())
-			} catch (e) {
-				console.error(e)
 			}
 		}
 	}
@@ -193,7 +171,6 @@ export function Spreadsheet({ initialData, className, onDataChange }: Spreadshee
 													setCurrentCell(cellAddr)
 												}
 											}}
-											tabIndex={0}
 										>
 											{cell?.value !== undefined && cell?.value !== null
 												? String(cell.value)
@@ -289,7 +266,7 @@ export function Spreadsheet({ initialData, className, onDataChange }: Spreadshee
 							/>
 						</div>
 
-						<div className="h-full w-[1px] bg-gray-300 mx-1"></div>
+						<div className="h-full w-[1px] bg-gray-300 mx-1" />
 
 						<div className="flex gap-1">
 							<button
@@ -410,22 +387,26 @@ export function Spreadsheet({ initialData, className, onDataChange }: Spreadshee
 					{/* Color controls */}
 					<div className="flex gap-3 items-center">
 						<div className="flex flex-col items-center">
-							<label className="text-xs text-gray-500">Text color</label>
-							<input
-								type="color"
-								value={currentStyle.color || "#000000"}
-								onChange={e => applyStyle({ color: e.target.value })}
-								className="w-8 h-6 cursor-pointer border border-gray-300"
-							/>
+							<label className="text-xs text-gray-500">
+								Text color
+								<input
+									type="color"
+									value={currentStyle.color || "#000000"}
+									onChange={e => applyStyle({ color: e.target.value })}
+									className="w-8 h-6 cursor-pointer border border-gray-300"
+								/>
+							</label>
 						</div>
 						<div className="flex flex-col items-center">
-							<label className="text-xs text-gray-500">Fill color</label>
-							<input
-								type="color"
-								value={currentStyle.backgroundColor || "#ffffff"}
-								onChange={e => applyStyle({ backgroundColor: e.target.value })}
-								className="w-8 h-6 cursor-pointer border border-gray-300"
-							/>
+							<label className="text-xs text-gray-500">
+								Fill color
+								<input
+									type="color"
+									value={currentStyle.backgroundColor || "#ffffff"}
+									onChange={e => applyStyle({ backgroundColor: e.target.value })}
+									className="w-8 h-6 cursor-pointer border border-gray-300"
+								/>
+							</label>
 						</div>
 					</div>
 				</div>

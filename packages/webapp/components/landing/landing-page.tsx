@@ -4,8 +4,9 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Input } from "@/components/ui/input"
 import { FileUp, Plus, Sparkles } from "lucide-react"
 import Link from "next/link"
+import LoadingIndicator from "../ui/loading-indicator"
 
-export const LandingPage: React.FC = () => {
+export const LandingPage = () => {
 	return (
 		<div className="min-h-screen bg-background flex flex-col items-center justify-center p-4">
 			<div className="max-w-2xl w-full space-y-8">
@@ -28,8 +29,10 @@ export const LandingPage: React.FC = () => {
 							</CardDescription>
 						</CardHeader>
 						<CardContent>
-							<Link href="/spreadsheet">
-								<Button className="w-full">Create New</Button>
+							<Link href="/spreadsheet ">
+								<Button variant="outline" className="w-full">
+									Create new <LoadingIndicator />
+								</Button>
 							</Link>
 						</CardContent>
 					</Card>

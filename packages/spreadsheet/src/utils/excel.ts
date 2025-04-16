@@ -1,5 +1,5 @@
 import * as XLSX from "xlsx"
-import type { Cell, CellCoordinate, ImportOptions, ExportOptions, SpreadsheetData, CellValue } from "../types"
+import type { CellCoordinate, ImportOptions, ExportOptions, SpreadsheetData, CellValue } from "../types"
 
 /**
  * Converts Excel column letters to a zero-based column index
@@ -79,7 +79,6 @@ export const importFromExcel = async (file: File, options: ImportOptions = {}): 
 					const excelCell = worksheet[cellAddress]
 
 					if (excelCell) {
-						const value = excelCell.v
 						const cellKey = coordinateToCellAddress({ row, col })
 
 						result[sheetName][cellKey] = {

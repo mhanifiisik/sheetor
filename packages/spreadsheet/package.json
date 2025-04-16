@@ -1,6 +1,5 @@
 {
   "name": "@sheetor/spreadsheet",
-  "private": true,
   "version": "0.0.0",
   "type": "module",
   "main": "./dist/index.js",
@@ -17,8 +16,10 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
-    "lint": "biome format --write . && biome lint .",
-    "format": "biome format"
+    "lint": "biome lint .",
+    "format": "biome format .",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.3",

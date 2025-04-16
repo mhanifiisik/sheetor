@@ -1,6 +1,6 @@
 import { useState, useCallback } from "react"
 import type { Cell, SpreadsheetData, ImportOptions, ExportOptions, CellCoordinate } from "../types"
-import { importFromExcel, exportToExcel, coordinateToCellAddress, cellAddressToCoordinate } from "../utils/excel"
+import { importFromExcel, exportToExcel, coordinateToCellAddress } from "../utils/excel"
 
 interface UseSpreadsheetOptions {
 	initialData?: SpreadsheetData

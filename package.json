@@ -9,9 +9,12 @@
     "build": "yarn workspaces run build",
     "build:webapp": "yarn workspace @sheetor/webapp build",
     "build:spreadsheet": "yarn workspace @sheetor/spreadsheet build",
+    "build:shared-ui": "yarn workspace @sheetor/shared-ui build",
     "start": "yarn workspace @sheetor/webapp start",
     "lint": "yarn workspaces run lint",
-    "format": "yarn workspaces run format"
+    "format": "yarn workspaces run format",
+    "storybook": "yarn workspace @sheetor/shared-ui storybook",
+    "build-storybook": "yarn workspace @sheetor/shared-ui build-storybook"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",

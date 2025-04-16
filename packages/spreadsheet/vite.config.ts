@@ -8,7 +8,7 @@ export default defineConfig({
 	plugins: [react(), tailwindcss()],
 	build: {
 		lib: {
-			entry: resolve(__dirname, "src/lib/index.ts"),
+			entry: resolve(__dirname, "src/main.tsx"),
 			name: "Spreadsheet",
 			fileName: format => `index.${format === "es" ? "js" : format}`,
 		},
