@@ -1,17 +1,15 @@
 import { useMemo } from "react"
 
 export interface Data {
-	[key: number]: {
-		companyName: string
-		country: string
-		name: string
-		sellDate: string
-		orderId: string
-		inStock: boolean
-		quantity: number
-		progress: number
-		rating: number
-	}
+	inStock: boolean
+	companyName: string
+	country: string
+	productName: string
+	sellDate: string
+	orderId: string
+	quantity: number
+	progress: number
+	rating: number
 }
 
 const companies = [

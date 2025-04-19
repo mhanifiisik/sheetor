@@ -30,27 +30,17 @@ registerPlugin(DropdownMenu)
 registerPlugin(Filters)
 registerPlugin(HiddenRows)
 
-type GridProps = {
-	data: Data
+interface GridProps {
+	data: Data[]
 }
 
 export default function Grid(props: GridProps) {
 	return (
-		<div className="w-full h-screen">
+		<div className="w-full h-full absolute inset-0">
 			<HotTable
-				data={props.data}
-				colWidths={[140, 126, 192, 100, 100, 90, 90, 110, 97]}
-				colHeaders={[
-					"Company name",
-					"Country",
-					"Name",
-					"Sell date",
-					"Order ID",
-					"In stock",
-					"Qty",
-					"Progress",
-					"Rating",
-				]}
+				data={[]}
+				colWidths={[]}
+				colHeaders={[]}
 				dropdownMenu={true}
 				contextMenu={true}
 				filters={true}
@@ -61,7 +51,8 @@ export default function Grid(props: GridProps) {
 				autoWrapCol={true}
 				imeFastEdit={true}
 				licenseKey="non-commercial-and-evaluation"
-				height={800}
+				height="100%"
+				width="100%"
 			>
 				<HotColumn data={1} />
 				<HotColumn data={2} />

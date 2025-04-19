@@ -1,10 +1,6 @@
-import Grid from "@/components/grid"
-import { data } from "./data"
+import generateRandomData from "./data"
 
 export default function Home() {
-	return (
-		<main className="flex min-h-screen flex-col w-full">
-			<Grid data={data} />
-		</main>
-	)
+	const data = generateRandomData()
+	return <main className="flex min-h-screen flex-col w-full">SPREADSHEET GOES HERE...</main>
 }

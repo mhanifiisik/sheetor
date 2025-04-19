@@ -26,14 +26,14 @@ export default function RootLayout({
 	children: React.ReactNode
 }>) {
 	return (
-		<html lang="en">
-			<body className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-hidden`}>
-				<SidebarProvider>
+		<html lang="en" className="h-full">
+			<body className={`${geistSans.variable} ${geistMono.variable} antialiased h-full overflow-hidden`}>
+				<SidebarProvider defaultOpen>
 					<SidebarInset>
 						<Header />
-						<div className="min-h-[calc(100vh-12h)] w-full p-2 bg-slate-100">{children}</div>
+						{children}
 					</SidebarInset>
-					<AppSidebar side="right" />
+					<AppSidebar />
 				</SidebarProvider>
 			</body>
 		</html>
