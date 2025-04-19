@@ -36,7 +36,7 @@ type GridProps = {
 
 export default function Grid(props: GridProps) {
 	return (
-		<div className="w-full min-h-screen">
+		<div className="w-full h-screen">
 			<HotTable
 				data={props.data}
 				colWidths={[140, 126, 192, 100, 100, 90, 90, 110, 97]}

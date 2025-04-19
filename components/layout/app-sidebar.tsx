@@ -1,22 +1,13 @@
 import * as React from "react"
 
-import {
-	Sidebar,
-	SidebarContent,
-	SidebarGroup,
-	SidebarGroupContent,
-	SidebarGroupLabel,
-	SidebarRail,
-} from "@/components/ui/sidebar"
+import { Sidebar, SidebarContent, SidebarRail } from "@/components/ui/sidebar"
+import ChatBar from "../chatbar"
 
 function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 	return (
 		<Sidebar {...props}>
-			<SidebarContent>
-				<SidebarGroup>
-					<SidebarGroupLabel>Table of Contents</SidebarGroupLabel>
-					<SidebarGroupContent>Content goes here...</SidebarGroupContent>
-				</SidebarGroup>
+			<SidebarContent className="p-2">
+				<ChatBar />
 			</SidebarContent>
 			<SidebarRail />
 		</Sidebar>
