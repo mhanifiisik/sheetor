@@ -17,8 +17,6 @@ import { HotTable, HotColumn } from "@handsontable/react"
 import "handsontable/styles/handsontable.min.css"
 import "handsontable/styles/ht-theme-main.min.css"
 
-import type { Data } from "@/app/data"
-
 registerCellType(CheckboxCellType)
 registerCellType(NumericCellType)
 
@@ -30,11 +28,7 @@ registerPlugin(DropdownMenu)
 registerPlugin(Filters)
 registerPlugin(HiddenRows)
 
-interface GridProps {
-	data: Data[]
-}
-
-export default function Grid(props: GridProps) {
+export default function Grid() {
 	return (
 		<div className="w-full h-full absolute inset-0">
 			<HotTable

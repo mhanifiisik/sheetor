@@ -49,7 +49,7 @@ function ToolbarButton({ icon, label, onClick }: ToolbarButtonProps) {
 
 function Toolbar() {
 	const insertFormula = (formula: string) => {
-		console.log(formula)
+		return formula //TODO:implement
 	}
 
 	return (

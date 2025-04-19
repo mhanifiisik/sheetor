@@ -5,13 +5,6 @@ import { Send } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Textarea } from "@/components/ui/textarea"
 
-interface Message {
-	id: string
-	content: string
-	sender: "user" | "agent"
-	timestamp: string
-}
-
 interface ChatBarFooterProps {
 	onSendMessage: (message: string) => void
 }
